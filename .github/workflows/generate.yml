@@ -10,27 +10,9 @@ on:
         - major
         - minor
         - patch
-      win10-cu:
-        description: Windows 10 1703
-        required: true
-        default: false
-        type: boolean
-      win10-rs3:
-        description: Windows 10 1709
-        required: true
-        default: false
-        type: boolean
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      win10-cu: ${{ inputs.win10-cu }}
-      win10-rs3: ${{ inputs.win10-rs3 }}
-    strategy:
-      fail-fast: false
-      matrix:
-        sdk: [win10-cu, win10-rs3]
-    if: inputs.${{ matrix.sdk }} == true
     steps:
       - uses: actions/checkout@v3
