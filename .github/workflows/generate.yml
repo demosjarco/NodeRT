@@ -36,7 +36,7 @@ jobs:
           git_user_signingkey: true
           git_commit_gpgsign: true
           git_tag_gpgsign: true
-      - name: Bump version and push tag
+      - name: Bump version
         id: tagGen
         uses: hennejg/github-tag-action@v4.3.1
         with:
@@ -44,3 +44,7 @@ jobs:
           default_bump: ${{ inputs.semver }}
           release_branches: ${{  github.ref_name }}
           dry_run: true
+      - name: Create tag
+        run: git tag ${{ steps.tagGen.outputs.new_tag }}
+      - name: Push tag
+        run: git push origin --tags
