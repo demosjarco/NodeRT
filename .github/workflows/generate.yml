@@ -45,6 +45,6 @@ jobs:
           release_branches: ${{  github.ref_name }}
           dry_run: true
       - name: Create tag
-        run: git tag ${{ steps.tagGen.outputs.new_tag }}
+        run: git tag ${{ steps.tagGen.outputs.new_tag }} -m ""
       - name: Push tag
         run: git push origin --tags
