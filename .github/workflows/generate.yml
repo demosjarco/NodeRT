@@ -1,3 +1,5 @@
+name: Generate new version
+
 on:
   workflow_dispatch:
     inputs:
