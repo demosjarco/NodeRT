@@ -164,7 +164,7 @@ jobs:
           egress-policy: audit
       - uses: actions/checkout@v4
       # Create GitHub Release matching npm release
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.generate-tag.outputs.tagVersion }}
           fail_on_unmatched_files: false
