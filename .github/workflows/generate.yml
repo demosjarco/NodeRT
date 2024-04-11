@@ -128,7 +128,7 @@ jobs:
       - run: npm install --global --fund=false node-gyp
 
       # Needed to setup visual studio builder
-      - uses: microsoft/setup-msbuild@v1.3
+      - uses: microsoft/setup-msbuild@v2
         with:
           # 17.x = 2022
           vs-version: '[17,18)'
